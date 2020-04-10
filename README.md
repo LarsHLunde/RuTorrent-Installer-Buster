@@ -1,21 +1,22 @@
 # RuTorrent-Installer-Buster v1.3.1 (Beta)
 
 ## Description
-This is a RuTorrent installer for debian buster linux systems. 
-My original goal for the project was to make a RuTorrent installer 
-for the Raspberry Pi 3 running Raspbian-jessie-lite, 
-this fork is for debian and raspbian buster. 
+This is a RuTorrent installer for debian buster linux systems.
+My original goal for the project was to make a RuTorrent installer
+for the Raspberry Pi 3 running Raspbian-jessie-lite,
+this fork is for debian and raspbian buster.
 
-Due to a bug with the buster repo version of libcurl4, 
-where if you add more than 2000-3000 torrents to rtorrent, 
-rtorrent will segfault and die. 
+Due to a bug with the buster repo version of libcurl4,
+where if you add more than 2000-3000 torrents to rtorrent,
+rtorrent will segfault and die.
 
-This version adds the testing repo to debian as the non-default, 
-and gets the libcurl4 version from there isntead of from buster. 
+This version adds the testing repo to debian as the non-default,
+and gets the libcurl4 version from there isntead of from buster.
 
 ## Systems
 ### Working and tested
 * Debian Buster x64
+* Armbian Buster (not stress tested)
 
 ## Dependecies
 This script installer is made in Lua,
@@ -80,9 +81,9 @@ on you being a sudoer. To check if you are a sudoer type in.
 sudo -v
 ```
 
-It should't return anything ask you for your password and return nothing, 
+It should't return anything ask you for your password and return nothing,
 if you get any other message, do the following steps:  
-  
+
 **_WARNING_: This presumes that you have control over the root user of the system**
 
 1. Copy and paste this line in to terminal:
@@ -92,7 +93,7 @@ su - root -c "apt-get install sudo -y && adduser $USER sudo"
 
 2. Enter the root user password
 
-3. Type in 
+3. Type in
 ```
 exit
 ```

@@ -138,8 +138,10 @@ os.execute("sudo mkdir " ..  torrentdir .. "/watch")
 os.execute("sudo chown -R " .. uid .. " " .. torrentdir)
 
 -- Install testing repo and set it to not default
+print("Adding testing repo to package manager")
 os.execute('echo "deb http://deb.debian.org/debian/ testing main" | sudo tee -a /etc/apt/sources.list > /dev/null')
 os.execute('echo "APT::Default-Release \"buster\";" | sudo tee -a /etc/apt/apt.conf.d/default-release > /dev/null')
+print("Updating packages ...")
 os.execute("sudo apt-get update > /dev/null")
 print("WARNING : There will now come a warning about")
 print("system which need to be restarted when certain libraries are upgraded.")
