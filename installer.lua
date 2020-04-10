@@ -140,8 +140,12 @@ os.execute("sudo chown -R " .. uid .. " " .. torrentdir)
 -- Install testing repo and set it to not default
 os.execute('echo "deb http://deb.debian.org/debian/ testing main" | sudo tee -a /etc/apt/sources.list > /dev/null')
 os.execute('echo "APT::Default-Release \"buster\";" | sudo tee -a /etc/apt/apt.conf.d/default-release > /dev/null')
-os.execute("sudo apt-get update")
-os.execute("sudo apt-get install -t testing libcurl4")
+os.execute("sudo apt-get update > /dev/null")
+print("There will now come a warning about, ")
+print("system which need to be restarted when certain libraries are upgraded.")
+print("Select yes with the arrow keys and press enter when this happens.")
+os.execute('read -p "Press enter to continue"')
+os.execute("sudo apt-get install -y -t testing libcurl4")
 
 -- Runs all the commands in the commands.txt file
 if compile then
