@@ -1,4 +1,4 @@
-# RuTorrent-Installer Buster v1.3.1 (Beta)
+# RuTorrent-Installer-Buster v1.3.1 (Beta)
 
 ## Description
 This is a RuTorrent installer for debian buster linux systems. 
