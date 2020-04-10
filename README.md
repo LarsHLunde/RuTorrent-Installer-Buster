@@ -1,4 +1,4 @@
-# RuTorrent-Installer Buster v1.3.1 (WIP)
+# RuTorrent-Installer Buster v1.3.1 (Beta)
 
 ## Description
 This is a RuTorrent installer for debian buster linux systems. 
@@ -15,8 +15,7 @@ and gets the libcurl4 version from there isntead of from buster.
 
 ## Systems
 ### Working and tested
-* None
-* Also none
+* Debian Buster x64
 
 ## Dependecies
 This script installer is made in Lua,
