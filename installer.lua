@@ -48,9 +48,9 @@ local torrentdir = homedir .. "/rtorrent"
 local compile = true
 
 -- Welcome messages
-print("Welcome to the RuTorrent Installer")
+print("Welcome to the RuTorrent Installer Buster")
 print("created by Pyro_Killer")
-print("It works on Ubuntu 16.04 and Debian for ARM and other architectures")
+print("It works on debian and raspbian buster")
 
 -- Check for a captive portal and working internet connection
 print("Checking for a working internet connection")
@@ -76,7 +76,7 @@ local apt_cache = assert(io.popen("sudo apt-cache policy rtorrent", "r"))
 tempvar = apt_cache:read('*all')
 apt_cache:close()
 
-if tempvar:match("0.9.6") or tempvar:match("0.9.7") then
+if tempvar:match("0.9.7") or tempvar:match("0.9.8") then
 	print("It appears we don't need to compile")
 	compile = false
 else
@@ -112,14 +112,14 @@ if dircheck_data ~= "" then
 	super_dir = super_dir:sub(super_dir:find("/" )+1)
 	new_dir = new_dir:reverse()
 	super_dir = super_dir:reverse()
-	
+
 	dircheck = assert(io.popen("cd " .. super_dir .. " 2>&1", "r"))
 	local dircheck_data = dircheck:read('*all')
 	dircheck:close()
-	
+
 	if dircheck_data == "" then
 		os.execute("cd  " .. super_dir .. " && mkdir " .. new_dir )
-	else	
+	else
 		print("The location you entered is invalid")
 		os.exit()
 	end
@@ -128,14 +128,20 @@ end
 
 print(torrentdir .. " will be used as rtorrent directory")
 
-if torrentdir:sub(torrentdir:len()) == "/" then 
-	torrentdir = torrentdir:sub(1,torrentdir:len()-1) 
+if torrentdir:sub(torrentdir:len()) == "/" then
+	torrentdir = torrentdir:sub(1,torrentdir:len()-1)
 end
 
 -- Creates the required directories for  rtorrent to work
 os.execute("sudo mkdir " ..  torrentdir .. "/.session")
 os.execute("sudo mkdir " ..  torrentdir .. "/watch")
 os.execute("sudo chown -R " .. uid .. " " .. torrentdir)
+
+-- Install testing repo and set it to not default
+os.execute('echo "deb http://deb.debian.org/debian/ testing main" | sudo tee -a /etc/apt/sources.list > /dev/null')
+os.execute('echo "APT::Default-Release \"buster\";" | sudo tee -a /etc/apt/apt.conf.d/default-release > /dev/null')
+os.execute("sudo apt-get update")
+os.execute("sudo apt-get install -t testing libcurl4")
 
 -- Runs all the commands in the commands.txt file
 if compile then
@@ -176,4 +182,3 @@ os.execute("screen -S rtorrent -fa -d -m rtorrent")
 print("Listening port is: 55555")
 print("Cleaning up")
 os.execute("cd ~ && rm RuTorrent-Installer/ -rf")
-

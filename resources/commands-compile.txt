@@ -28,13 +28,11 @@ sudo apt-get install -y libncurses5-dev >> /dev/null;Installing libncurses5-dev
 sudo apt-get install -y ncurses-term >> /dev/null;Installing ncurses-term
 sudo apt-get install -y libsigc++-2.0-dev >> /dev/null;Installing libsigc++-2.0-dev
 sudo apt-get install -y libcppunit-dev >> /dev/null;Installing libcppunit-dev
-sudo apt-get install -y libcurl3 >> /dev/null;Installing libcurl3
 sudo apt-get install -y libcurl4-openssl-dev >> /dev/null;Installing libcurl4-openssl-dev
 sudo apt-get install -y git >> /dev/null;Installing git
 sudo apt-get install -y apache2 >> /dev/null;Installing apache2
 sudo apt-get install -y apache2-utils >> /dev/null;Installing apache2-utils
-sudo apt-get install -y libapache2-mod-php5 2>/dev/null >/dev/null;Installing libapache2-mod-php5
-sudo apt-get install -y libapache2-mod-php7.0 2>/dev/null >/dev/null;Installing libapache2-mod-php7.0
+sudo apt-get install -y libapache2-mod-php7.3 2>/dev/null >/dev/null;Installing libapache2-mod-php7.0
 sudo apt-get install -y mediainfo >> /dev/null;Installing mediainfo
 #
 # Download, compile and install XML-RPC
