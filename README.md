@@ -1,36 +1,22 @@
-# RuTorrent-Installer v1.3.1
+# RuTorrent-Installer Buster v1.3.1 (WIP)
 
 ## Description
-This is a RuTorrent installer for debian based linux systems.
-My original goal for the project was to make a RuTorrent installer
-for the Raspberry Pi 3 running Raspbian-jessie-lite 
-but found quickly that it worked on many different Debian based systems.
+This is a RuTorrent installer for debian buster linux systems. 
+My original goal for the project was to make a RuTorrent installer 
+for the Raspberry Pi 3 running Raspbian-jessie-lite, 
+this fork is for debian and raspbian buster. 
 
-It downloads and compiles XML-RPC, LibTorrent and rTorrent,
-or downloads them from the repo if rTorrent is 0.9.6,
-and runs on apache2 web server.
+Due to a bug with the buster repo version of libcurl4, 
+where if you add more than 2000-3000 torrents to rtorrent, 
+rtorrent will segfault and die. 
+
+This version adds the testing repo to debian as the non-default, 
+and gets the libcurl4 version from there isntead of from buster. 
 
 ## Systems
 ### Working and tested
-* Ubuntu 16.04 64-bit
-* Ubuntu 16.04 32-bit
-* Debian Jessie 64-bit
-* Debian Jessie 32-bit
-* Debian Stretch 64-bit
-* Debian Stretch 32-bit
-* Devuan Jessie 64-bit
-* Devuan Jessie 32-bit
-* Devuan ASCII 64-bit
-* Devuan ASCII 32-bit
-* Raspbian Jessie
-* Raspbian Stretch
-* Armbian Xenial
-* Armbian Jessie
-* Armbian Stretch
-
-## Not working (yet)
-* Ubuntu 14.04 64-bit
-* Ubuntu 14.04 32-bit
+* None
+* Also none
 
 ## Dependecies
 This script installer is made in Lua,
