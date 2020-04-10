@@ -144,8 +144,10 @@ os.execute("sudo apt-get update > /dev/null")
 print("There will now come a warning about, ")
 print("system which need to be restarted when certain libraries are upgraded.")
 print("Select yes with the arrow keys and press enter when this happens.")
-os.execute('read -p "Press enter to continue"')
+print("Press enter to continue")
+io.read()
 os.execute("sudo apt-get install -y -t testing libcurl4")
+os.execute("sudo apt-get install -y -t testing curl > /dev/null")
 
 -- Runs all the commands in the commands.txt file
 if compile then

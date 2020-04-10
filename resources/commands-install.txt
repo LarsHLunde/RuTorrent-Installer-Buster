@@ -16,7 +16,7 @@ sudo apt-get install -y screen >> /dev/null;Installing screen
 sudo apt-get install -y git >> /dev/null;Installing git
 sudo apt-get install -y apache2 >> /dev/null;Installing apache2
 sudo apt-get install -y apache2-utils >> /dev/null;Installing apache2-utils
-sudo apt-get install -y libapache2-mod-php7.3 2>/dev/null >/dev/null;Installing libapache2-mod-php7.0
+sudo apt-get install -y libapache2-mod-php7.3 2>/dev/null >/dev/null;Installing libapache2-mod-php7.3
 sudo apt-get install -y mediainfo >> /dev/null;Installing mediainfo
 sudo apt-get install -y rtorrent >> /dev/null;Installing rTorrent
 #
