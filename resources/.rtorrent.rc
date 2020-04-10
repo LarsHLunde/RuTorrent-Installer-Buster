@@ -23,7 +23,7 @@ session = KEYWORD/.session
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-schedule = watch_directory,5,5,load_start=KEYWORD/.watch/*.torrent
+schedule = watch_directory,5,5,load.start_verbose=KEYWORD/.watch/*.torrent
 
 # Close torrents when diskspace is low.
 schedule = low_diskspace,5,60,close_low_diskspace=100M
