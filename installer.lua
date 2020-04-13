@@ -139,7 +139,17 @@ os.execute("sudo chown -R " .. uid .. " " .. torrentdir)
 
 -- Install testing repo and set it to not default
 print("Adding testing repo to package manager")
-os.execute('echo "deb http://deb.debian.org/debian/ testing main" | sudo tee -a /etc/apt/sources.list > /dev/null')
+
+local os_release = assert(io.popen("cat /etc/os-release", "r"))
+tempvar = os_release:read('*all')
+os_release:close()
+
+if tempvar:match("raspbian") then
+	os.execute('echo "deb http://raspbian.raspberrypi.org/raspbian/ testing main" | sudo tee -a /etc/apt/sources.list > /dev/null')
+else
+	os.execute('echo "deb http://deb.debian.org/debian/ testing main" | sudo tee -a /etc/apt/sources.list > /dev/null')
+end
+
 os.execute('echo "APT::Default-Release \"buster\";" | sudo tee -a /etc/apt/apt.conf.d/default-release > /dev/null')
 print("Updating packages ...")
 os.execute("sudo apt-get update > /dev/null")
