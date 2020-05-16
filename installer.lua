@@ -161,7 +161,7 @@ io.read()
 print("Installing libgcc-8-dev from testing")
 os.execute("sudo apt-get install -y -t testing libgcc-8-dev > /dev/null")
 print("Installing libcurl4 from testing")
-os.execute("sudo apt-get install -y -t testing libcurl4 > /dev/null")
+os.execute("sudo apt-get install -y -t testing libcurl4")
 print("Installing curl from testing")
 os.execute("sudo apt-get install -y -t testing curl > /dev/null")
 
