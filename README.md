@@ -1,4 +1,4 @@
-# RuTorrent-Installer-Buster v1.1
+# RuTorrent-Installer-Buster v1.1.1
 
 ## Description
 This is a RuTorrent installer for debian buster linux systems.
@@ -83,5 +83,6 @@ You can repeat this proccess if needed
 ## Changelog
 Description | Version | State
 --- | --- | ---
+New bug where dependency for libgcc-8-dev fails on install | v1.1.1 | release
 Added code for raspbian, stress tested for all systems | v1.1 | release
 Initial working release for armbian and debian | v1.0 | beta
